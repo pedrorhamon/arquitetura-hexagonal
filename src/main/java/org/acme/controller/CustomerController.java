@@ -3,6 +3,7 @@ package org.acme.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.acme.ListaException;
 import org.acme.model.Customer;
 import org.acme.service.CustomerService;
 
@@ -25,8 +26,8 @@ public class CustomerController {
 		List<Customer> customers = new ArrayList<>();
 		try {
 			this.customerService.findAllCustomers();
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (ListaException e) {
+			e.getMessage();
 		}
 		return customers;
 	}
