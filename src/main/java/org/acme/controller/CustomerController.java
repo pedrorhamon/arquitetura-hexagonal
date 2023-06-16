@@ -7,6 +7,7 @@ import org.acme.model.Customer;
 import org.acme.service.CustomerService;
 
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
@@ -32,6 +33,7 @@ public class CustomerController {
 	}
 
 	@POST
+	@Transactional
 	public void addCustomer(Customer customer) {
 		this.customerService.addCustomer(customer);
 	}
