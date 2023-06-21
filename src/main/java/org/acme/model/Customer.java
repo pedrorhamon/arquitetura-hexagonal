@@ -2,6 +2,7 @@ package org.acme.model;
 
 import java.io.Serializable;
 
+import io.smallrye.common.constraint.NotNull;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,12 +30,15 @@ public class Customer implements Serializable{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	
+	@NotNull
 	private String name;
 	
+	@NotNull
 	private String lastName;
 	
+	@NotNull
 	private Integer age;
 	
+	@NotNull
 	private String email;
-
 }
